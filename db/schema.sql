@@ -2,12 +2,12 @@ DROP TABLE IF EXISTS movies;
 
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
-  trackName VARCHAR NOT NULL,
-  artistName VARCHAR NOT NULL,
-  primaryGenreName VARCHAR NOT NULL,
-  releaseDate VARCHAR NOT NULL,
-  trackHdPrice INT NOT NULL,
-  artworkUrl100 TEXT NOT NULL,
-  longDescription TEXT NOT NULL,
+  title VARCHAR NOT NULL,
+  actor VARCHAR NOT NULL,
+  genre VARCHAR NOT NULL,
+  release VARCHAR NOT NULL,
+  price INT NOT NULL,
+  picture TEXT NOT NULL,
+  description TEXT NOT NULL,
   date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

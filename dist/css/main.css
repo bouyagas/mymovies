@@ -1,2 +1,52 @@
+div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+h2 {
+  font-size: 24px;
+  color: #F4F4F4;
+  order: 1;
+
+}
+h3 {
+  color: #DCD0C0;
+  order: 1;
+}
+p {
+  font-size: 20px;
+  color: #C0B283;
+  order: 3;
+ }
+
+img {
+  width: 199px;
+  text-align: center;
+  order: 1;
+}
+
+.moviescontainer {
+  margin-top: 123px;
+}
+ .greet h1 {
+    position: fixed;
+    margin: -8px 0px;
+    height: 61px;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    color: #0E0B16;
+    font-size: 49px;
+}
+
+
+body {
+  background-color: #fff /* #0E0B16*/;
+  font-size: small;
+  font-family: 'Pangolin', cursive;
+  color: #000;
+}
 
 /*# sourceMappingURL=main.css.map*/

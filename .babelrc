@@ -1,12 +1,9 @@
 {
-  "presets" : ["latest", "env", "react", 'stage-0'],
+  "presets" : ["es2015", "react"],
   "compact" : true,
   "plugins": [
     ["transform-strict-mode", {
       "strict": true
-     }],
-    ["transform-class-properties", {
-      "spec": true
-     }]
+    }]
   ]
 }

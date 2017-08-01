@@ -1,0 +1,12 @@
+ .greet h1 {
+    position: fixed;
+    margin: -8px 0px;
+    height: 61px;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    color: #0E0B16;
+    font-size: 49px;
+}
+
+

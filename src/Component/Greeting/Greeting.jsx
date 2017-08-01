@@ -1,13 +1,20 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import './Greeting.css';
+export default class Greeting extends React.Component {
 
-const Greeting = (props) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+       greeting: 'My Movies',
+    }
+  }
+
+  render() {
     return (
-        <div>
-        	<h1>hello</h1>
-        </div>
+      <div className='greet'>
+      	<h1>{this.state.greeting}</h1>
+      </div>
     );
-};
+  }
+}
 
-
-
-export default Greeting;

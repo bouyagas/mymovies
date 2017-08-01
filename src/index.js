@@ -2,15 +2,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute, hashHistory } from 'react-router';
-import App from './App/App.jsx';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes.js';
 
-const router = (
-   <Router history={hashHistory}>
-        <Route path='/' component={App} />
-   </Router>
-
-)
-
-
-ReactDOM.render((router), document.querySelector('#root-container'));
+ReactDOM.render(
+  <Router routes={routes} history={browserHistory} />,
+   document.querySelector('#root-container')
+);

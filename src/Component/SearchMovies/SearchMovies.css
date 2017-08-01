@@ -1,0 +1,10 @@
+input[type=text] {
+   padding: 20px 300px;
+    margin: 105px 305px;
+    border: 2px solid rgb(204, 204, 204);
+    -webkit-border-radius: 5px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+
