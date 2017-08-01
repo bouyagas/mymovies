@@ -2,25 +2,27 @@ import React from 'react';
 import './MoviesItem.css';
 const MoviesItem = (props) => {
   return (
-	    <div className="container">
+	    <div className="row hoverable">
+        <div className="col s12">
+          <div className="card">
+            <div className="card-image">
+              <img className="" src={props.picture} alt="picture"/>
+            </div>
+            <div className="card-content">
+              <p>{props.title}</p>
+              <p>{props.description}</p>
+            </div>
+            <div className="card-action">
+               <p>{props.genre}</p>
+               <p>{props.actor}</p>
+               <p>{props.release}</p>
+               <p>${props.price}.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-             <table className="highlight bordered responsive-table">
-             	<tbody>
-                  <tr>
-                  	<td>{props.title}</td>
-                  	<td>{props.actor}</td>
-                  	<td>{props.genre}</td>
-                  	<td>{props.release}</td>
-                  	<td>${props.price}.00</td>
-                  	<td><img className=" responsive-img" src={props.picture} alt="picture"/></td>
-                    <td className="col s12 m4 l2 ">{props.description}</td>
-                  </tr>
-             	</tbody>
-             </table>
-	    </div>
     );
 };
-
-
 
 export default MoviesItem;

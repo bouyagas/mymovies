@@ -1,6 +1,7 @@
  .greet h1 {
-    position: fixed;
-    margin: -8px 0px;
+    position: absolute;
+    top: 0px;
+    left: 0;
     height: 61px;
     width: 100%;
     background-color: #fff;

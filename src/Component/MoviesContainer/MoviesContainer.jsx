@@ -107,18 +107,6 @@ export default class MoviesContainer extends React.Component {
 
     return (
       <div className="moviescontainer container">
-      <table className="highlight bordered responsive-table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Actor</th>
-                  <th>Genre</th>
-                  <th>Price</th>
-                  <th>Picture</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-        </table>
        { mymovies }
       </div>
     );

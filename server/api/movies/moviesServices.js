@@ -7,14 +7,14 @@ const searchMovies = (req, res, next) => {
   fetch(`${API_URL}term=${req.body.searchTerm}&media=movie&entity=movie&attribute=movieTerm`)
   .then(r => r.json())
   .then((movies) => {
-    res.result = movies
+    res.data = movies;
     next();
   })
   .catch((error) => {
-   res.error = error
+   res.error = error;
   });
-}
+};
 
 module.exports = {
-  searchMovies
+  searchMovies,
 };

@@ -1,29 +1,26 @@
 div {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    align-items: center;
    flex-wrap: wrap;
-}
 
-h2 {
-  font-size: 24px;
-  color: #F4F4F4;
-  order: 1;
-
-}
-h3 {
-  color: #DCD0C0;
-  order: 1;
 }
 p {
-  font-size: 20px;
-  color: #C0B283;
-  order: 3;
+  margin-left: 50px;
  }
 
-img {
-  width: 199px;
-  text-align: center;
-  order: 1;
-}
+ .card, .hoverable{
+  left: 80px;
+ }
 
+.card .card-image img {
+  display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 360px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    margin-top: 24px;
+}

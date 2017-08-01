@@ -9,5 +9,5 @@ ituneRouter.route('/')
 
 
 module.exports = {
-  ituneRouter
-}
+  ituneRouter,
+};
