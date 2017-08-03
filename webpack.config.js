@@ -1,5 +1,4 @@
 'use strict'
-
 const webpack           = require('webpack');
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -35,10 +34,37 @@ const config = {
       inject:     false,
       template:   htmlTemplate,
       appMountId: 'root-container',
+      favicon: './favicon/movies.ico',
       links: [
           'https://fonts.googleapis.com/css?family=Pangolin',
           'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css'
-      ]
+      ],
+      meta: [
+        {
+          name: 'dscription',
+          content: 'This is my movies collection site'
+        },
+        {
+          name: 'keyword',
+          content: 'movies, movies release date, movies genre, action movies'
+        },
+        {
+          name: 'author',
+          content: 'Mohamed Gassama'
+        },
+        {
+          name: 'Content-Type',
+          content: 'http-equiv'
+        },
+         {
+            name: "content",
+            content: "text/html; charset=UTF-8"
+         },
+         {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
+         }
+      ],
  }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true,

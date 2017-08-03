@@ -1,6 +1,7 @@
 const express = require('express');
 const moviesRoutes = express.Router();
-const { getFavoritesMovies, saveFavoritesMovies, deleteFavoriteMovies } = require('./moviesModels.js');
+const { getFavoritesMovies, getFavoritesMovie, saveFavoritesMovies,
+        updateFavoriteMovie, deleteFavoriteMovie } = require('./moviesModels.js');
 const sendJSONresp = require('../../libs/sendJsonResp.js');
 
 moviesRoutes.route('/')
@@ -8,8 +9,10 @@ moviesRoutes.route('/')
    .post(saveFavoritesMovies);
 
 moviesRoutes.route('/:id')
-   .delete(deleteFavoriteMovies);
+   .get(getFavoritesMovie, sendJSONresp)
+   .put(updateFavoriteMovie)
+   .delete(deleteFavoriteMovie);
 
-   module.exports = {
-      moviesRoutes
-   }
+module.exports = {
+  moviesRoutes,
+}

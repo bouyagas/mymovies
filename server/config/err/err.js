@@ -8,7 +8,7 @@ const clientErr = (err, req, res, next) => {
 
 const serverErr  = (err, req, res, next) => {
   console.error(err.message);
-  res.status(404).sendFile(path.join(__dirname, '../../../internalServerError.html'));
+  res.status(500).sendFile(path.join(__dirname, '../../../internalServerError.html'));
   next();
 };
 
