@@ -21,12 +21,11 @@ export default class App extends Component {
 
     render() {
         return (
-          <div>
+          <div className=".my-container">
             <Greeting />
              { this.props.children && React.cloneElement(this.props.children, {
                    updateOverallState: (k, v) => this.updateState(k, v),
              })}
-
           </div>
         );
     }

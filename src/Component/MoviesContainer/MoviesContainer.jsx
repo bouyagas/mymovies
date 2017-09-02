@@ -5,8 +5,10 @@ import './MoviesContainer.css';
 export default class MoviesContainer extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
      movies: [],
+
      movie: {
        title: '',
        picture: '',
@@ -16,7 +18,9 @@ export default class MoviesContainer extends React.Component {
        price:  '',
        description: ''
      },
-    }
+
+    };
+
   }
 
    componentDidMount() {
@@ -33,14 +37,35 @@ export default class MoviesContainer extends React.Component {
        },
          method: 'GET',
        })
-      .then(r => r.json())
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
          this.setState({
           movies: data,
         });
       })
-      .catch(err => console.log('getAllFavaritesMovies', err))
+      .catch(error => console.log('getAllFavaritesMovies', error));
+    }
+
+    getASingleFavoriteMovie(id) {
+     fetch(`/api/movies/${id}`, {
+      headers: {
+        'content-type': 'application/json',
+      },
+        method: 'GET',
+     })
+     .then((response) => {
+        return response.json();
+     })
+     .then((data) => {
+      console.log(data);
+       this.setState({
+         movies: data
+       });
+     })
+     .catch(error => console.log(error));
     }
 
     saveFavoritesMovies() {
@@ -74,7 +99,30 @@ export default class MoviesContainer extends React.Component {
        .catch(error => console.log(error));
     }
 
-    deleteFavoriteMovies(id) {
+    updataFavoriteMovie(id) {
+      fetch(`/api/movies/${id}`, {
+        headers: {
+           'content-type': 'application/json',
+        },
+        method: 'PUT'
+      })
+       .then(this.setState({
+          movie: {
+            title: '',
+            actor: '',
+            genre: '',
+            release: '',
+            price:  '',
+            picture: '',
+            description: ''
+          },
+        }))
+      .then((resposne) => {
+         return response.json();
+      })
+      .catch(error => console.log(error));
+    }
+    deleteFavoriteMovie(id) {
       fetch(`/api/movies/${id}`, {
         method: 'DELETE'
        })
