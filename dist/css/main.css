@@ -1,49 +1,59 @@
-div {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   flex-wrap: wrap;
-
+div.card-image{
+  top: 16px;
+  left: 35px;
 }
-p {
-  margin-left: 50px;
- }
 
+.action1 {
+ display: flex;
+ text-indent: 20px;
+}
+
+h5 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+h6 {
+  color : #fff;
+  line-height: 1.5em;
+}
+
+p {
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+acti
  .card, .hoverable{
-  left: 80px;
+  left: 16px;
  }
 
 .card .card-image img {
   display: block;
-    border-radius: 2px 2px 0 0;
-    position: relative;
-    left: 360px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 180px;
-    margin-top: 24px;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 360px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 230px;
+  margin-top: 24px;
 }
 .moviescontainer {
-  margin-top:100px;
-}
- .greet h1 {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    height: 61px;
-    width: 100%;
-    background-color: #fff;
-    text-align: center;
-    color: #0E0B16;
-    font-size: 49px;
+  position: absolute;
+  top: 139px;
+  left: 194px;
+  width: 70%;
 }
 
 
 body {
-  background-color: #fff /* #0E0B16*/;
+  background-color: #3AAFA9;
   font-family: 'Pangolin', cursive;
   color: #000;
+  width: 100%;
 }
+
 
 /*# sourceMappingURL=main.css.map*/
