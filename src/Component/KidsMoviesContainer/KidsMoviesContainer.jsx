@@ -35,7 +35,7 @@ export default class KidsMoviesContainer extends React.Component {
       method: 'GET',
     })
     .then((response) => {
-      return response.json;
+      return response.json();
        })
     .then((data) => {
       console.log(data);
