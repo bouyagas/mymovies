@@ -1,7 +1,7 @@
 const db = require('../../libs/dbConfig.js');
 
 const getFavoritesMovies = (req, res, next) => {
-   db.any(`SELECT * FROM movies;`)
+   db.any(`SELECT * FROM movies LIMIT 3;`)
      .then((movies) => {
       res.data = movies;
      next();
