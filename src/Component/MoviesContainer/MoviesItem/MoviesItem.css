@@ -1,26 +1,42 @@
-div {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   flex-wrap: wrap;
-
+div.card-image{
+  top: 16px;
+  left: 35px;
 }
-p {
-  margin-left: 50px;
- }
 
+.action1 {
+ display: flex;
+ text-indent: 20px;
+}
+
+h5 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+h6 {
+  color : #fff;
+  line-height: 1.5em;
+}
+
+p {
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+acti
  .card, .hoverable{
-  left: 80px;
+  left: 16px;
  }
 
 .card .card-image img {
   display: block;
-    border-radius: 2px 2px 0 0;
-    position: relative;
-    left: 360px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 180px;
-    margin-top: 24px;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 360px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 230px;
+  margin-top: 24px;
 }

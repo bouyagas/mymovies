@@ -154,8 +154,8 @@ export default class MoviesContainer extends React.Component {
         });
 
     return (
-      <div className="moviescontainer container">
-       { mymovies }
+        <div className="moviescontainer">
+         { mymovies }
       </div>
     );
   }

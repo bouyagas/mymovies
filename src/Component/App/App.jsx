@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Greeting from '../Greeting/Greeting.jsx';
+import NavBar from '../NavBar/NavBar.jsx';
 import './App.css';
 
 export default class App extends Component {
@@ -21,8 +21,9 @@ export default class App extends Component {
 
     render() {
         return (
-          <div className=".my-container">
-            <Greeting />
+          <div >
+            <NavBar />
+
              { this.props.children && React.cloneElement(this.props.children, {
                    updateOverallState: (k, v) => this.updateState(k, v),
              })}
