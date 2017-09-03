@@ -11,7 +11,9 @@ export default class KidsMoviesContainer extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+      	<h1>KidsMoviesContainer</h1>
+      </div>
     );
   }
 }
