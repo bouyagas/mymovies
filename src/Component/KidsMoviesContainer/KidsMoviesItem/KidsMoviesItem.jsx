@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-
-const KidsMoviesItem = ({ className }) => {
+import './KidsMoviesItem.css';
+const KidsMoviesItem = (props) => {
     return (
       <div>
-
+       <h5>{props.title}</h5>
       </div>
     );
 };
