@@ -47,7 +47,7 @@
   \**********************/
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 37);var _reactDom2=_interopRequireDefault(_reactDom);var _reactRouter=__webpack_require__(/*! react-router */ 184);var _routes=__webpack_require__(/*! ./routes.js */ 241);var _routes2=_interopRequireDefault(_routes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router,{routes:_routes2.default,history:_reactRouter.browserHistory}),document.querySelector('#root-container'));
+	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 37);var _reactDom2=_interopRequireDefault(_reactDom);var _reactRouter=__webpack_require__(/*! react-router */ 184);var _routes=__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./routes.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));var _routes2=_interopRequireDefault(_routes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router,{routes:_routes2.default,history:_reactRouter.browserHistory}),document.querySelector('#root-container'));
 
 /***/ }),
 /* 1 */
@@ -8533,79 +8533,6 @@
 	replaceHashPath(encodedPath);}else{var currentLocation=getCurrentLocation(pathCoder,queryKey);if(prevLocation&&currentLocation.key&&prevLocation.key===currentLocation.key)return;// Ignore extraneous hashchange events
 	prevLocation=currentLocation;listener(currentLocation);}};// Ensure the hash is encoded properly.
 	var path=getHashPath();var encodedPath=pathCoder.encodePath(path);if(path!==encodedPath)replaceHashPath(encodedPath);(0,_DOMUtils.addEventListener)(window,HashChangeEvent,handleHashChange);return function(){return(0,_DOMUtils.removeEventListener)(window,HashChangeEvent,handleHashChange);};};var updateLocation=function updateLocation(location,pathCoder,queryKey,updateHash){var state=location.state,key=location.key;var path=pathCoder.encodePath((0,_PathUtils.createPath)(location));if(state!==undefined){path=(0,_PathUtils.addQueryStringValueToPath)(path,queryKey,key);(0,_DOMStateStorage.saveState)(key,state);}prevLocation=location;updateHash(path);};var pushLocation=exports.pushLocation=function pushLocation(location,pathCoder,queryKey){return updateLocation(location,pathCoder,queryKey,function(path){if(getHashPath()!==path){pushHashPath(path);}else{ true?(0,_warning2.default)(false,'You cannot PUSH the same path using hash history'):void 0;}});};var replaceLocation=exports.replaceLocation=function replaceLocation(location,pathCoder,queryKey){return updateLocation(location,pathCoder,queryKey,function(path){if(getHashPath()!==path)replaceHashPath(path);});};
-
-/***/ }),
-/* 241 */
-/*!***********************!*\
-  !*** ./src/routes.js ***!
-  \***********************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactRouter=__webpack_require__(/*! react-router */ 184);var _MoviesContainer=__webpack_require__(/*! ./Component/MoviesContainer/MoviesContainer.jsx */ 242);var _MoviesContainer2=_interopRequireDefault(_MoviesContainer);var _App=__webpack_require__(/*! ./Component/App/App.jsx */ 247);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=_react2.default.createElement(_reactRouter.Route,{path:'/',component:_App2.default},_react2.default.createElement(_reactRouter.IndexRoute,{component:_MoviesContainer2.default}));
-
-/***/ }),
-/* 242 */
-/*!***********************************************************!*\
-  !*** ./src/Component/MoviesContainer/MoviesContainer.jsx ***!
-  \***********************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _MoviesItem=__webpack_require__(/*! ./MoviesItem/MoviesItem.jsx */ 243);var _MoviesItem2=_interopRequireDefault(_MoviesItem);__webpack_require__(/*! ./MoviesContainer.css */ 245);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var MoviesContainer=function(_React$Component){_inherits(MoviesContainer,_React$Component);function MoviesContainer(props){_classCallCheck(this,MoviesContainer);var _this=_possibleConstructorReturn(this,(MoviesContainer.__proto__||Object.getPrototypeOf(MoviesContainer)).call(this,props));_this.state={movies:[],movie:{title:'',picture:'',actor:'',genre:'',release:'',price:'',description:''}};return _this;}_createClass(MoviesContainer,[{key:'componentDidMount',value:function componentDidMount(){this.getAllFavaritesMovies();}},{key:'alertInfo',value:function alertInfo(msg){alert(msg);}},{key:'getAllFavaritesMovies',value:function getAllFavaritesMovies(){var _this2=this;fetch('/api/movies',{headers:{'content-type':'application/json'},method:'GET'}).then(function(r){return r.json();}).then(function(data){console.log(data);_this2.setState({movies:data});}).catch(function(err){return console.log('getAllFavaritesMovies',err);});}},{key:'saveFavoritesMovies',value:function saveFavoritesMovies(){fetch('/api/post',{headers:{'content-type':'application/json'},method:'POST'});body:JSON.stringify({title:this.state.movie.title,actor:this.state.movie.actor,genre:this.state.movie.genre,release:this.state.movie.release,price:this.state.movie.price,picture:this.state.movie.picture,description:this.state.movie.description}).then(this.setState({movie:{title:'',actor:'',genre:'',release:'',price:'',picture:'',description:''}})).then(this.alertInfo('A movie has been saved')).catch(function(error){return console.log(error);});}},{key:'deleteFavoriteMovies',value:function deleteFavoriteMovies(id){var _this3=this;fetch('/api/movies/'+id,{method:'DELETE'}).then(function(){var movies=_this3.state.movies.filter(function(movie){return movie.id!==id;});_this3.setState({movies:movies});}).catch(function(error){return console.log(error);});}},{key:'render',value:function render(){var mymovies=this.state.movies.map(function(movie,i){return _react2.default.createElement(_MoviesItem2.default,{key:i,title:movie.title,picture:movie.picture,actor:movie.actor,genre:movie.genre,release:movie.release,price:movie.price,description:movie.description});});return _react2.default.createElement('div',{className:'moviescontainer'},mymovies);}}]);return MoviesContainer;}(_react2.default.Component);exports.default=MoviesContainer;
-
-/***/ }),
-/* 243 */
-/*!*****************************************************************!*\
-  !*** ./src/Component/MoviesContainer/MoviesItem/MoviesItem.jsx ***!
-  \*****************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./MoviesItem.css */ 244);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var MoviesItem=function MoviesItem(props){return _react2.default.createElement('div',{className:'col s12 m4 l8'},_react2.default.createElement('div',{className:'card hoverable red lighten-1'},_react2.default.createElement('div',{className:'card-image'},_react2.default.createElement('img',{className:'',src:props.picture,alt:'picture'})),_react2.default.createElement('div',{className:'card-content'},_react2.default.createElement('h5',null,props.title),_react2.default.createElement('h6',null,props.description)),_react2.default.createElement('div',{className:'card-action action1'},_react2.default.createElement('p',null,props.genre),_react2.default.createElement('p',null,props.actor),_react2.default.createElement('p',null,props.release),_react2.default.createElement('p',null,'$',props.price,'.00'))));};exports.default=MoviesItem;
-
-/***/ }),
-/* 244 */
-/*!*****************************************************************!*\
-  !*** ./src/Component/MoviesContainer/MoviesItem/MoviesItem.css ***!
-  \*****************************************************************/
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 245 */
-/*!***********************************************************!*\
-  !*** ./src/Component/MoviesContainer/MoviesContainer.css ***!
-  \***********************************************************/
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 246 */,
-/* 247 */
-/*!***********************************!*\
-  !*** ./src/Component/App/App.jsx ***!
-  \***********************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _NavBar=__webpack_require__(/*! ../NavBar/NavBar.jsx */ 248);var _NavBar2=_interopRequireDefault(_NavBar);__webpack_require__(/*! ./App.css */ 249);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var App=function(_Component){_inherits(App,_Component);function App(){_classCallCheck(this,App);return _possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).call(this));}_createClass(App,[{key:'updateState',value:function updateState(key,value){this.setState(_defineProperty({},key,value));}},{key:'componentDidMount',value:function componentDidMount(){window.scrollTo(0,0);}},{key:'render',value:function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement(_NavBar2.default,null),this.props.children&&_react2.default.cloneElement(this.props.children,{updateOverallState:function updateOverallState(k,v){return _this2.updateState(k,v);}}));}}]);return App;}(_react.Component);exports.default=App;
-
-/***/ }),
-/* 248 */
-/*!*****************************************!*\
-  !*** ./src/Component/NavBar/NavBar.jsx ***!
-  \*****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactRouter=__webpack_require__(/*! react-router */ 184);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var NavBar=function(_React$Component){_inherits(NavBar,_React$Component);function NavBar(props){_classCallCheck(this,NavBar);var _this=_possibleConstructorReturn(this,(NavBar.__proto__||Object.getPrototypeOf(NavBar)).call(this,props));_this.state={};return _this;}_createClass(NavBar,[{key:'render',value:function render(){return _react2.default.createElement('div',{className:'navbar-fixed'},_react2.default.createElement('nav',{className:'nav-wrapper brown darken-4'},_react2.default.createElement('li',{className:'item1 brand-logo'},_react2.default.createElement(_reactRouter.Link,{to:'/'},'Movies Collection')),_react2.default.createElement('ul',{className:'itemNav right'},_react2.default.createElement('li',{className:'item1'},_react2.default.createElement(_reactRouter.Link,{to:'#'},'Lastest Movies')),_react2.default.createElement('li',{className:'item2'},_react2.default.createElement(_reactRouter.Link,{to:'#'},'Old School Movies')),_react2.default.createElement('li',{className:'item3'},_react2.default.createElement(_reactRouter.Link,{to:'#'},'Kids Movies')),_react2.default.createElement('li',{className:'item4'},_react2.default.createElement(_reactRouter.Link,{to:'#'},'Documentary Movies')),_react2.default.createElement('li',{className:'item5'},_react2.default.createElement(_reactRouter.Link,{to:'#'},'Action Movies')))));}}]);return NavBar;}(_react2.default.Component);exports.default=NavBar;
-
-/***/ }),
-/* 249 */
-/*!***********************************!*\
-  !*** ./src/Component/App/App.css ***!
-  \***********************************/
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
