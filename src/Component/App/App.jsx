@@ -21,12 +21,12 @@ export default class App extends Component {
 
     render() {
         return (
-          <div>
+          <div >
             <NavBar />
+
              { this.props.children && React.cloneElement(this.props.children, {
                    updateOverallState: (k, v) => this.updateState(k, v),
              })}
-
           </div>
         );
     }

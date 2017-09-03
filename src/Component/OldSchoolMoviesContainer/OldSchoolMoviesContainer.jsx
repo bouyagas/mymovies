@@ -11,7 +11,9 @@ export default class OldSchoolMoviesContainer extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+      	<h1>OldSchoolMoviesContainer</h1>
+      </div>
     );
   }
 }

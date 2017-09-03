@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default class LastestMoviesContainer extends React.Component {
-  static propTypes = {
-    name: React.PropTypes.string,
-  };
 
   constructor(props) {
     super(props);
@@ -11,7 +8,9 @@ export default class LastestMoviesContainer extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+      	<h1>LastestMoviesContainer</h1>
+      </div>
     );
   }
 }

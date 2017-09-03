@@ -8,7 +8,9 @@ export default class DocumentaryMoviesContainer extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <h1>DocumentaryMoviesContainer</h1>
+      </div>
     );
   }
 }
