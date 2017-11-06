@@ -3,7 +3,7 @@ import './MoviesItem.css';
 const MoviesItem = (props) => {
   return (
     <div className="col s12 m4 l8">
-      <div className="card hoverable red lighten-1">
+      <div className="card hoverable  movies">
         <div className="card-image">
           <img className="" src={props.picture} alt="picture"/>
         </div>
