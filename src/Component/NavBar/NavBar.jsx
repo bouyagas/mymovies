@@ -12,7 +12,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
      <div className="navbar-fixed">
-        <nav className="nav-wrapper brown darken-4">
+        <nav className="nav-wrapper">
         	    <li className="item1 brand-logo"><Link to="/">Movies Collection</Link></li>
         	<ul className="itemNav right">
         		<li className="item1"><Link to="lastest">Lastest Movies</Link></li>

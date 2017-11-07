@@ -10,7 +10,10 @@ const api = require('./api/api.js');
 //middleware
 middleware(server);
 
+// api
 server.use('/api', api);
+server.use('/api', api);
+
 server.use(express.static(path.join(__dirname, '../dist')));
 server.use(clientErr);
 server.use(serverErr);

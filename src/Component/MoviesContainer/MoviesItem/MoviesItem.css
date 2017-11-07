@@ -1,3 +1,7 @@
+.movies {
+  background-color: #f6d155;
+}
+
 div.card-image{
   top: 16px;
   left: 35px;
@@ -9,19 +13,19 @@ div.card-image{
 }
 
 h5 {
-  color: #fff;
+  color: #223A5E;
   font-weight: bold;
   font-size: 25px;
 }
 
 h6 {
-  color : #fff;
+  color : #223A5E;
   line-height: 1.5em;
 }
 
 p {
   letter-spacing: 2px;
-  color: #fff;
+  color: #223A5E;
 }
 
 acti
